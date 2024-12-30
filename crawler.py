@@ -5,12 +5,21 @@ from robots_txt import fetch_disallowed_paths, fetch_robots_txt
 from fnmatch import fnmatch
 
 
+class Link:
+
+    def __init__(self, url, title, html_body, crawled):
+        self.url = url
+        self.title = title
+        self.htmlbody = html_body
+        self.crawled = crawled  #this is a boolean
+
+
 class Crawler:
 
     def __init__(self, recursion_depth):
         self.recursion_depth = recursion_depth
-        self.valid_links = []
-        
+        self.valid_links = [] #a list of type Link
+
 
 
 def crawl(url: str):
