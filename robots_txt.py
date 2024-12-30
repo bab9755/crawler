@@ -5,9 +5,7 @@ def fetch_robots_txt(url: str):
 
     parsed_url = urllib.parse.urlparse(url)
 
-    url_robots_txt = fetch_robots_txt(url) # get the robots_txt file
-
-    disallowed_paths = fetch_disallowed_paths(url_robots_txt) #get all the paths that are disallowed from the rul
+    
 
     # print(f"the netloc is {parsed_url.netloc}")
 
@@ -48,13 +46,9 @@ def fetch_disallowed_paths(robots_txt: str):
 
 
 
-    
-    
+# robots_txt = fetch_robots_txt('https://www.youtube.com/')
 
+# disallowed = fetch_disallowed_paths(robots_txt)
 
-robots_txt = fetch_robots_txt('https://www.youtube.com/')
-
-disallowed = fetch_disallowed_paths(robots_txt)
-
-for path in disallowed:
-    print(path)
+# for path in disallowed:
+#     print(path)
