@@ -5,6 +5,14 @@ from robots_txt import fetch_disallowed_paths, fetch_robots_txt
 from fnmatch import fnmatch
 
 
+class Crawler:
+
+    def __init__(self, recursion_depth):
+        self.recursion_depth = recursion_depth
+        self.valid_links = []
+        
+
+
 def crawl(url: str):
 
     #we need to first normalize the url
@@ -83,6 +91,12 @@ def is_valid_url(url: str):
 
     parsed_url = urllib.parse.urlparse(url)
     return bool(parsed_url.scheme) and bool(parsed_url.netloc)
+
+
+
+def main():
+
+    max_depth = 2
 
 
 
